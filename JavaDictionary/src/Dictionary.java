@@ -1,34 +1,25 @@
+import java.util.ArrayList;
+
 public class Dictionary {
-    private int numOfWords = 0;
-    private Word[] wordArray;
+    public ArrayList<Word> wordArray;
 
     public Dictionary() {
-
+        wordArray = new ArrayList<Word>();
     }
 
-    public Dictionary(int numOfWords) {
-        wordArray = new Word[numOfWords];
-        this.numOfWords = numOfWords;
-    }
-
-    public Dictionary(Word[] newWordArray) {
+    public Dictionary(ArrayList<Word> newWordArray) {
         this.wordArray = newWordArray;
-        this.numOfWords = newWordArray.length;
     }
 
-    public int getNumOfWords() {
-        return numOfWords;
-    }
-
-    public void setNumOfWords(int numOfWords) {
-        this.numOfWords = numOfWords;
-    }
-
-    public Word[] getWordArray() {
+    public ArrayList<Word> getWordArray() {
         return wordArray;
     }
 
-    public void setWordArray(Word[] wordArray) {
+    public void setWordArray(ArrayList<Word> wordArray) {
         this.wordArray = wordArray;
+    }
+
+    public void addWord(Word word) {
+        wordArray.add(word);
     }
 }

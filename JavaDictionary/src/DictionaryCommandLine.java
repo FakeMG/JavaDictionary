@@ -1,9 +1,8 @@
 public class DictionaryCommandLine {
 
     public static void showAllWords(Dictionary mainDictionary) {
-        for (int i = 0; i < mainDictionary.getNumOfWords(); i++) {
-            System.out.println(mainDictionary.getWordArray()[i].getWordTarget() + " - "
-                    + mainDictionary.getWordArray()[i].getWordExplain());
+        for (int i = 0; i < mainDictionary.getWordArray().size(); i++) {
+            System.out.println(mainDictionary.getWordArray().get(i).toString());
         }
     }
 
@@ -13,9 +12,8 @@ public class DictionaryCommandLine {
     }
 
     public static void dictionaryAdvanced(DictionaryManagement manager) {
-        //TODO:
-        //insertFromFile()
+        manager.insertFromFile();
         showAllWords(manager.getMainDictionary());
-        //dictionaryLookup()
+        manager.dictionaryLookup();
     }
 }
