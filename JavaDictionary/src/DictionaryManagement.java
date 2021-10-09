@@ -7,6 +7,8 @@ import java.util.logging.Logger;
 public class DictionaryManagement {
     private FileInputStream fileInputStream = null;
     private BufferedReader bufferedReader = null;
+    private FileOutputStream fileOutputStream = null;
+    private BufferedWriter bufferedWriter = null;
 
     private Scanner sc = new Scanner(System.in);
     private Dictionary mainDictionary = new Dictionary();
@@ -69,7 +71,7 @@ public class DictionaryManagement {
                     if (c == '\n') {
                         word.setWordExplain(currentWord.toString());
                         currentWord = new StringBuilder();
-                        mainDictionary.wordArray.add(word);
+                        mainDictionary.addWord(word);
                         word = new Word();
                     } else {
                         currentWord.append(c);
@@ -104,6 +106,36 @@ public class DictionaryManagement {
         System.out.println("Can not find meaning!");
     }
 
+    public void dictionaryExportToFile() {
+        try {
+            String url = "D:\\Projects\\JavaDictionary\\JavaDictionary\\src\\output.txt";
+            fileOutputStream = new FileOutputStream(url);
+            bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
+
+            //Check empty
+            if (mainDictionary.getWordArray().size() <= 0) {
+                throw new IllegalArgumentException();
+            }
+
+            for (int i = 0; i < mainDictionary.getWordArray().size(); i++) {
+                bufferedWriter.write(mainDictionary.getWordArray().get(i).toString());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FAILED TO WRITE FILE!", ex);
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.INFO, "Dictionary is empty!", ex);
+        } finally {
+            try {
+                bufferedWriter.close();
+                fileOutputStream.close();
+            } catch (NullPointerException | IOException ex) {
+                Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
     public Dictionary getMainDictionary() {
         return mainDictionary;
     }
@@ -119,7 +151,7 @@ public class DictionaryManagement {
 
     public static void main(String[] args) {
         DictionaryManagement manager = new DictionaryManagement();
-        manager.insertFromCommandline();
-        DictionaryCommandLine.showAllWords(manager.getMainDictionary());
+        manager.insertFromFile();
+        manager.dictionaryExportToFile();
     }
 }

@@ -11,6 +11,7 @@ public class Word {
         this.wordExplain = wordExplain;
     }
 
+    @Override
     public String toString() {
         return wordTarget + "\t-\t" + wordExplain;
     }

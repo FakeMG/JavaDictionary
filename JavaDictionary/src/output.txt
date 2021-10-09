@@ -1,0 +1,4 @@
+hello	-	xin chào
+food	-	đồ ăn
+fish	-	cá
+dogs	-	chó

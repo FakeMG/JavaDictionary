@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bafcef56-d84d-49ae-8c59-82c3aaa036bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dictionaries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DictionaryCommandLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DictionaryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Word.java" afterDir="false" />
     </list>
