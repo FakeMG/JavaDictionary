@@ -1,4 +1,5 @@
 import java.io.*;
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -18,7 +19,7 @@ public class DictionaryManagement {
             int newNumOfWords;
 
             //input
-            System.out.print("Nhap so luong tu: ");
+            System.out.print("Nhập số lượng từ: ");
             newNumOfWords = sc.nextInt();
             sc.nextLine(); //tránh nhập kí tự xuống dòng
 
@@ -26,21 +27,22 @@ public class DictionaryManagement {
             String target;
             String explain;
             for (int i = 0; i < newNumOfWords; i++) {
-                System.out.print("English word " + (i + 1) + ": ");
+                System.out.print("Enter word " + (i + 1) + ": ");
                 target = sc.nextLine();
 
-                if (checkRepeatedWord(target)) {
+                if (dataBase.checkRepeatedWord(target)) {
                     System.out.println("ERROR: This word has already existed!");
                 } else {
                     System.out.print("Meaning: ");
                     explain = sc.nextLine();
 
-                    Word newWord = new Word(target, explain);
-                    mainDictionary.getWordArray().add(newWord);
+                    dataBase.insertToDatabase(target, explain);
+                    System.out.println("Word is added!");
                 }
             }
         } catch (InputMismatchException ex) {
-            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "Please type a number!", ex);
+            Logger.getLogger(DictionaryManagement.class.getName())
+                    .log(Level.SEVERE, "ERROR: Please type a number!", ex);
         }
     }
 
@@ -50,32 +52,33 @@ public class DictionaryManagement {
             fileInputStream = new FileInputStream(url);
             bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
             StringBuilder currentWord = new StringBuilder();
+            String target = "";
+            String explain = "";
             Word word = new Word();
             int data = bufferedReader.read();
             char c;
 
             while (data != -1) {
                 c = (char) data;
+                //input có dạng "target\texplain"
                 //Đọc đến kí tự \t thì lưu lại target word
                 if (c == '\t') {
-                    if (checkRepeatedWord(currentWord.toString())) {
-                        bufferedReader.readLine();
+                    //check từ đã tồn tại
+                    if (dataBase.checkRepeatedWord(currentWord.toString())) {
+                        bufferedReader.readLine(); //nếu từ đã tồn tại thì chuyển dòng tiếp theo
                         System.out.println("\"" + currentWord.toString()
                                 + "\" has not been added because it's already existed");
                     } else {
-                        word.setWordTarget(currentWord.toString());
+                        target = currentWord.toString();  //nếu từ chưa tồn tại thì lưu lại vào target
                     }
+                    currentWord = new StringBuilder(); //tạo mới lại "currentWord" để lưu từ mới
+                } else if (c == '\n') {
+                    explain = currentWord.toString();
                     currentWord = new StringBuilder();
-                } else
-                    //Đọc đến kí tự \n thì lưu lại định nghĩa
-                    if (c == '\n') {
-                        word.setWordExplain(currentWord.toString());
-                        currentWord = new StringBuilder();
-                        mainDictionary.addWord(word);
-                        word = new Word();
-                    } else {
-                        currentWord.append(c);
-                    }
+                    dataBase.insertToDatabase(target, explain); //insert vào database
+                } else {
+                    currentWord.append(c);   //nếu kí tự tiếp theo ko phải \t hoặc \n thì đọc tiếp
+                }
                 data = bufferedReader.read();
             }
         } catch (FileNotFoundException ex) {
@@ -93,17 +96,49 @@ public class DictionaryManagement {
 
     }
 
+    public void deleteWord() {
+        String target;
+        System.out.print("Enter a word: ");
+        target = sc.nextLine();
+
+        if (!dataBase.checkRepeatedWord(target)) {
+            System.out.println("ERROR: This word doesn't exist in dictionary!");
+            return;
+        }
+
+        dataBase.deleteFromDatabase(target);
+        System.out.println("Word is deleted from dictionary!");
+    }
+
+    public void updateWord() {
+        String target;
+        String explain;
+        System.out.print("Enter a word: ");
+        target = sc.nextLine();
+
+        if (!dataBase.checkRepeatedWord(target)) {
+            System.out.println("ERROR: This word doesn't exist in dictionary!");
+            return;
+        }
+
+        System.out.print("Enter new meaning of the word: ");
+        explain = sc.nextLine();
+
+        dataBase.updateDatabase(target, explain);
+        System.out.println("Word is updated!");
+    }
+
     public void dictionaryLookup() {
         String target;
-        System.out.print("Nhập từ cần tra: ");
+        System.out.print("Enter a word: ");
         target = sc.nextLine();
-        for (int i = 0; i < mainDictionary.getWordArray().size(); i++) {
-            if (mainDictionary.getWordArray().get(i).getWordTarget().equals(target)) {
-                System.out.println("Meaning: " + mainDictionary.getWordArray().get(i).getWordExplain());
-                return;
-            }
+
+        if (!dataBase.checkRepeatedWord(target)) {
+            System.out.println("ERROR: This word doesn't exist in dictionary!");
+            return;
         }
-        System.out.println("Can not find meaning!");
+
+        System.out.println(dataBase.lookup(target));
     }
 
     public void dictionaryExportToFile() {
@@ -113,19 +148,19 @@ public class DictionaryManagement {
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
 
             //Check empty
-            if (mainDictionary.getWordArray().size() <= 0) {
+            if (dataBase.checkEmptyDatabase()) {
                 throw new IllegalArgumentException();
             }
 
-            for (int i = 0; i < mainDictionary.getWordArray().size(); i++) {
-                bufferedWriter.write(mainDictionary.getWordArray().get(i).toString());
-                bufferedWriter.newLine();
-            }
+            bufferedWriter.write(dataBase.readFromDatabase());
+            System.out.println("Exported successfully!");
             bufferedWriter.flush();
         } catch (IOException ex) {
             Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FAILED TO WRITE FILE!", ex);
         } catch (IllegalArgumentException ex) {
             Logger.getLogger(DictionaryManagement.class.getName()).log(Level.INFO, "Dictionary is empty!", ex);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         } finally {
             try {
                 bufferedWriter.close();
@@ -140,18 +175,8 @@ public class DictionaryManagement {
         return mainDictionary;
     }
 
-    public boolean checkRepeatedWord(String word) {
-        for (int i = 0; i < mainDictionary.getWordArray().size(); i++) {
-            if (word.equals(mainDictionary.getWordArray().get(i).getWordTarget())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void main(String[] args) {
         DictionaryManagement manager = new DictionaryManagement();
-        manager.insertFromFile();
-        manager.dictionaryExportToFile();
+        manager.updateWord();
     }
 }

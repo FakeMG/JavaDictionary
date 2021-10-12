@@ -1,4 +1,5 @@
-hello	-	xin chào
-food	-	đồ ăn
-fish	-	cá
-dogs	-	chó
+hello	-	xin chào
+name	-	tên
+hell	-	địa ngục
+hi	-	chào
+heaven	-	thiên đường
