@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bafcef56-d84d-49ae-8c59-82c3aaa036bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_36_0_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sqlite_jdbc_3_36_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TextToSpeech.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Translator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDictionary.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DictionaryCommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +45,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/sqlite-jdbc-3.36.0.3.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/freetts-1.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3954023" />
   </component>
-  <component name="RunManager" selected="Application.DictionaryManagement">
+  <component name="RunManager" selected="Application.TextToSpeech">
     <configuration name="DictionaryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DictionaryManagement" />
+      <module name="JavaDictionary" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextToSpeech" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TextToSpeech" />
+      <module name="JavaDictionary" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Translator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Translator" />
       <module name="JavaDictionary" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -71,6 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TextToSpeech" />
+        <item itemvalue="Application.Translator" />
         <item itemvalue="Application.DictionaryManagement" />
         <item itemvalue="Application.dataBase" />
       </list>
