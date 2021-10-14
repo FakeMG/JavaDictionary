@@ -1,3 +1,5 @@
+package groupId.JavaDictionary;
+
 public class Word {
     private String wordTarget;
     private String wordExplain;

@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bafcef56-d84d-49ae-8c59-82c3aaa036bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaFX/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/resources/com/example/javafx/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DictionaryCommandLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextToSpeech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextToSpeech.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Translator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dictionaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dictionaries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaFX/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaFX/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaFX/Scene2Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/Scene1.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/Scene2.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDictionary.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/JavaFX.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/main/resources/com/example/javafx/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/DictionaryCommandLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TextToSpeech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/TextToSpeech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/Translator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/dataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dictionaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/dictionaries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/words.db" beforeDir="false" afterPath="$PROJECT_DIR$/words.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +58,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1yqJGn5gfZ9PLVAnPEqe0oTf911" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -56,15 +75,57 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/freetts-1.2/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/groupId/JavaFX" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3954023" />
   </component>
-  <component name="RunManager" selected="Application.TextToSpeech">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\JavaDictionary\JavaDictionary\src\main\java\groupId\JavaFX" />
+      <recent name="D:\Projects\JavaDictionary\JavaDictionary\src\main\resources\groupId\JavaFX" />
+      <recent name="D:\Projects\JavaDictionary\JavaDictionary\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\JavaDictionary\JavaDictionary\src\main\java\groupId\JavaDictionary" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DictionaryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DictionaryManagement" />
+      <option name="MAIN_CLASS_NAME" value="groupId.JavaDictionary.DictionaryManagement" />
       <module name="JavaDictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="groupId.JavaDictionary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="groupId.JavaFX.Main" />
+      <module name="JavaDictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="groupId.JavaFX.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextToSpeech (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="groupId.JavaDictionary.TextToSpeech" />
+      <module name="JavaDictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="groupId.JavaDictionary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,26 +137,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Translator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Translator" />
+    <configuration name="Translator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="groupId.JavaDictionary.Translator" />
       <module name="JavaDictionary" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="dataBase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dataBase" />
-      <module name="JavaDictionary" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="groupId.JavaDictionary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TextToSpeech" />
-        <item itemvalue="Application.Translator" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DictionaryManagement" />
-        <item itemvalue="Application.dataBase" />
+        <item itemvalue="Application.Translator (1)" />
+        <item itemvalue="Application.TextToSpeech (1)" />
+        <item itemvalue="Application.TextToSpeech" />
       </list>
     </recent_temporary>
   </component>
@@ -121,5 +182,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

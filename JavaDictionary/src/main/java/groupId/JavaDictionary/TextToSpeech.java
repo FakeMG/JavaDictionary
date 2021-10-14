@@ -1,3 +1,5 @@
+package groupId.JavaDictionary;
+
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;

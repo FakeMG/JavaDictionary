@@ -1,3 +1,5 @@
+package groupId.JavaDictionary;
+
 import java.io.*;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
@@ -177,6 +179,6 @@ public class DictionaryManagement {
 
     public static void main(String[] args) {
         DictionaryManagement manager = new DictionaryManagement();
-        manager.updateWord();
+        DictionaryCommandLine.showAllWords();
     }
 }

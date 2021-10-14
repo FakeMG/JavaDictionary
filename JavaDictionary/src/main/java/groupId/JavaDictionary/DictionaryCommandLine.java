@@ -1,3 +1,5 @@
+package groupId.JavaDictionary;
+
 public class DictionaryCommandLine {
 
     public static void showAllWords() {

@@ -1,3 +1,5 @@
+package groupId.JavaDictionary;
+
 import java.sql.*;
 import java.util.Locale;
 
