@@ -15,7 +15,7 @@ public final class Translator {
         System.out.println("Translated text: " + translate("vi", "en", text));
     }
 
-    private static String translate(String langFrom, String langTo, String text) throws IOException {
+    public static String translate(String langFrom, String langTo, String text) throws IOException {
         // INSERT YOU URL HERE
         String urlStr = "https://script.google.com/macros/s/AKfycbwIBzaWov_3igBWribUrCjJEPvxxqFfstJl-d-wYWruJN5T-lhF/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +

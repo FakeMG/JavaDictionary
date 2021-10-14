@@ -113,20 +113,23 @@ public class DictionaryManagement {
     }
 
     public void updateWord() {
-        String target;
+        String oldTarget;
+        String newTarget;
         String explain;
         System.out.print("Enter a word: ");
-        target = sc.nextLine();
+        oldTarget = sc.nextLine();
 
-        if (!dataBase.checkRepeatedWord(target)) {
+        if (!dataBase.checkRepeatedWord(oldTarget)) {
             System.out.println("ERROR: This word doesn't exist in dictionary!");
             return;
         }
 
+        System.out.print("Enter new version of the word: ");
+        newTarget = sc.nextLine();
         System.out.print("Enter new meaning of the word: ");
         explain = sc.nextLine();
 
-        dataBase.updateDatabase(target, explain);
+        dataBase.updateDatabase(newTarget, explain, oldTarget);
         System.out.println("Word is updated!");
     }
 

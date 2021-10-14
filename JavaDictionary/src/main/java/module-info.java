@@ -4,6 +4,7 @@ module groupId.JavaDictionary {
     requires java.logging;
     requires java.sql;
     requires jsapi;
+    requires freetts;
 
 
     opens groupId.JavaFX to javafx.fxml;

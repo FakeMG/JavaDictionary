@@ -1,17 +1,20 @@
 package groupId.JavaFX;
 
+import groupId.JavaDictionary.dataBase;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Scene1.fxml"));
+            dataBase.connect();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Hello!");
             stage.setScene(scene);

@@ -3,6 +3,8 @@ package groupId.JavaDictionary;
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import java.util.Locale;
 
 public final class TextToSpeech {

@@ -1,6 +1,8 @@
 package groupId.JavaDictionary;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class dataBase {
@@ -8,13 +10,15 @@ public class dataBase {
     static PreparedStatement pstmt;
     static Statement stmt;
     static final String DB_URL = "jdbc:sqlite:words.db";
-    static final String READ = "SELECT * FROM words";
+    static final String READ = "SELECT * FROM words ORDER BY english_word ASC, meaning DESC";
     static final String INSERT = "INSERT INTO words (english_word, meaning) SELECT ?, ? " +
             "WHERE NOT EXISTS (SELECT * FROM words WHERE words.english_word = ?)";
     static final String DELETE = "DELETE FROM words WHERE english_word IN (?)";
     static final String REPEAT = "SELECT english_word FROM words WHERE words.english_word = ?";
-    static final String UPDATE = "UPDATE words SET meaning = ? WHERE english_word = ?";
+    static final String UPDATE = "UPDATE words SET english_word = ?, meaning = ? WHERE english_word = ?";
     static final String LOOKUP = "SELECT * FROM words WHERE english_word LIKE ? || '%' ORDER BY english_word ASC, meaning DESC";
+    static final String LOOKUP1 = "SELECT meaning FROM words WHERE english_word IN (?)";
+
 
     public static void connect() {
         try {
@@ -67,6 +71,23 @@ public class dataBase {
         return result.toString();
     }
 
+    public static void readFromDatabase(List<String> wordArray) {
+        try {
+            if (checkEmptyDatabase()) {
+                System.out.println("Dictionary is empty! Please add more words!");
+                return;
+            }
+
+            //read
+            ResultSet rs = stmt.executeQuery(READ);
+            while (rs.next()) {
+                wordArray.add(rs.getString("english_word"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void deleteFromDatabase(String target) {
         try {
             //xóa dấu cách để tránh lỗi sau này
@@ -80,11 +101,12 @@ public class dataBase {
         }
     }
 
-    public static void updateDatabase(String target, String explain) {
+    public static void updateDatabase(String newTarget, String explain, String oldTarget) {
         try {
             pstmt = conn.prepareStatement(UPDATE);
-            pstmt.setString(1, explain);
-            pstmt.setString(2, target);
+            pstmt.setString(1, newTarget);
+            pstmt.setString(2, explain);
+            pstmt.setString(3, oldTarget);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -107,6 +129,31 @@ public class dataBase {
         return result.toString();
     }
 
+    public static void lookup(List<String> wordArray, String target) {
+        try {
+            pstmt = conn.prepareStatement(LOOKUP);
+            pstmt.setString(1, target);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                wordArray.add(rs.getString("english_word"));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static String lookupSingleWord(String target) {
+        try {
+            pstmt = conn.prepareStatement(LOOKUP1);
+            pstmt.setString(1, target);
+            ResultSet rs = pstmt.executeQuery();
+            return rs.getString("meaning");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return "";
+    }
+
     public static boolean checkEmptyDatabase() throws SQLException {
         ResultSet rs = stmt.executeQuery(READ);
         return !rs.next();
@@ -122,5 +169,11 @@ public class dataBase {
             ex.printStackTrace();
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        connect();
+        updateDatabase("hi", "hi", "chào");
+        System.out.println(lookupSingleWord("hi"));
     }
 }
