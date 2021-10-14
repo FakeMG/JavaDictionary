@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bafcef56-d84d-49ae-8c59-82c3aaa036bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextToSpeech.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Translator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDictionary.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/com/example/javafx/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/main/resources/com/example/javafx/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DictionaryCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DictionaryCommandLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextToSpeech.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TextToSpeech.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Translator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dictionaries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="17" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/freetts-1.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
