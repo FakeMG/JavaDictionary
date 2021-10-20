@@ -32,13 +32,13 @@ public class DictionaryManagement {
                 System.out.print("Enter word " + (i + 1) + ": ");
                 target = sc.nextLine();
 
-                if (dataBase.checkRepeatedWord(target)) {
+                if (DataBase.checkRepeatedWord(target)) {
                     System.out.println("ERROR: This word has already existed!");
                 } else {
                     System.out.print("Meaning: ");
                     explain = sc.nextLine();
 
-                    dataBase.insertToDatabase(target, explain);
+                    DataBase.insertToDatabase(target, explain);
                     System.out.println("Word is added!");
                 }
             }
@@ -66,7 +66,7 @@ public class DictionaryManagement {
                 //Đọc đến kí tự \t thì lưu lại target word
                 if (c == '\t') {
                     //check từ đã tồn tại
-                    if (dataBase.checkRepeatedWord(currentWord.toString())) {
+                    if (DataBase.checkRepeatedWord(currentWord.toString())) {
                         bufferedReader.readLine(); //nếu từ đã tồn tại thì chuyển dòng tiếp theo
                         System.out.println("\"" + currentWord.toString()
                                 + "\" has not been added because it's already existed");
@@ -77,7 +77,7 @@ public class DictionaryManagement {
                 } else if (c == '\n') {
                     explain = currentWord.toString();
                     currentWord = new StringBuilder();
-                    dataBase.insertToDatabase(target, explain); //insert vào database
+                    DataBase.insertToDatabase(target, explain); //insert vào database
                 } else {
                     currentWord.append(c);   //nếu kí tự tiếp theo ko phải \t hoặc \n thì đọc tiếp
                 }
@@ -103,12 +103,12 @@ public class DictionaryManagement {
         System.out.print("Enter a word: ");
         target = sc.nextLine();
 
-        if (!dataBase.checkRepeatedWord(target)) {
+        if (!DataBase.checkRepeatedWord(target)) {
             System.out.println("ERROR: This word doesn't exist in dictionary!");
             return;
         }
 
-        dataBase.deleteFromDatabase(target);
+        DataBase.deleteFromDatabase(target);
         System.out.println("Word is deleted from dictionary!");
     }
 
@@ -119,7 +119,7 @@ public class DictionaryManagement {
         System.out.print("Enter a word: ");
         oldTarget = sc.nextLine();
 
-        if (!dataBase.checkRepeatedWord(oldTarget)) {
+        if (!DataBase.checkRepeatedWord(oldTarget)) {
             System.out.println("ERROR: This word doesn't exist in dictionary!");
             return;
         }
@@ -129,7 +129,7 @@ public class DictionaryManagement {
         System.out.print("Enter new meaning of the word: ");
         explain = sc.nextLine();
 
-        dataBase.updateDatabase(newTarget, explain, oldTarget);
+        DataBase.updateDatabase(newTarget, explain, oldTarget);
         System.out.println("Word is updated!");
     }
 
@@ -138,12 +138,12 @@ public class DictionaryManagement {
         System.out.print("Enter a word: ");
         target = sc.nextLine();
 
-        if (!dataBase.checkRepeatedWord(target)) {
+        if (!DataBase.checkRepeatedWord(target)) {
             System.out.println("ERROR: This word doesn't exist in dictionary!");
             return;
         }
 
-        System.out.println(dataBase.lookup(target));
+        System.out.println(DataBase.lookup(target));
     }
 
     public void dictionaryExportToFile() {
@@ -153,11 +153,11 @@ public class DictionaryManagement {
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
 
             //Check empty
-            if (dataBase.checkEmptyDatabase()) {
+            if (DataBase.checkEmptyDatabase()) {
                 throw new IllegalArgumentException();
             }
 
-            bufferedWriter.write(dataBase.readFromDatabase());
+            bufferedWriter.write(DataBase.readFromDatabase());
             System.out.println("Exported successfully!");
             bufferedWriter.flush();
         } catch (IOException ex) {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupId.JavaFX.VocabularyController">
+    <children>
+        <ListView fx:id="mainListView" layoutX="11.0" layoutY="79.0" prefHeight="320.0" prefWidth="200.0" />
+        <TextField fx:id="searchBar" layoutX="11.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" styleClass="txt" />
+        <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="219.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/outline_search_black_36dp.png" />
+            </image>
+        </ImageView>
+        <TextArea fx:id="engWord" editable="false" layoutX="314.0" layoutY="156.0" prefHeight="20.0" prefWidth="200.0" styleClass="txt" AnchorPane.bottomAnchor="207.0" AnchorPane.leftAnchor="314.0" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="156.0" />
+        <TextArea fx:id="vietWord" editable="false" layoutX="314.0" layoutY="239.0" prefHeight="8.0" prefWidth="200.0" styleClass="txt" />
+        <Text fill="#257bb9" layoutX="314.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="English" />
+        <Text fill="#257bb9" layoutX="314.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vietnamese " />
+        <Button layoutX="29.0" layoutY="14.0" mnemonicParsing="false" onAction="#addWord" prefHeight="25.0" prefWidth="55.0" styleClass="btn" text="Add" AnchorPane.rightAnchor="517.0" />
+        <ImageView fx:id="speakerImg" fitHeight="25.0" fitWidth="25.0" layoutX="489.0" layoutY="127.0" onMouseClicked="#speak" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../images/outline_volume_up_black_24dp.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="backButton" layoutX="501.0" layoutY="365.0" mnemonicParsing="false" onAction="#back" prefHeight="17.0" prefWidth="85.0" styleClass="btn" text="Back" />
+      <Text fill="#145eff" layoutX="304.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Từ điển Anh - Việt">
+         <font>
+            <Font name="Arial" size="27.0" />
+         </font>
+      </Text>
+      <Button layoutX="84.0" layoutY="14.0" mnemonicParsing="false" onAction="#editWord" prefWidth="55.0" text="Edit">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <Button layoutX="139.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteWord" prefWidth="55.0" text="Delete" />
+    </children>
+</AnchorPane>

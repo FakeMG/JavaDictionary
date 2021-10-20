@@ -17,7 +17,7 @@
                </image>
             </ImageView>
             <Button mnemonicParsing="false" onAction="#vocabScene" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Vocabulary" />
-            <Button fx:id="btn_translate" mnemonicParsing="false" onAction="#translateScene" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Translate">
+            <Button mnemonicParsing="false" onAction="#translateScene" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Translation">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>

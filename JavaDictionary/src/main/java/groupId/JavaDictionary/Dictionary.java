@@ -6,6 +6,6 @@ public class Dictionary {
     public ArrayList<Word> wordArray;
 
     public Dictionary() {
-        dataBase.connect();
+        DataBase.connect();
     }
 }

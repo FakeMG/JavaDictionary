@@ -3,7 +3,7 @@ package groupId.JavaDictionary;
 public class DictionaryCommandLine {
 
     public static void showAllWords() {
-        System.out.println(dataBase.readFromDatabase());
+        System.out.println(DataBase.readFromDatabase());
     }
 
     public static void dictionaryBasic(DictionaryManagement manager) {

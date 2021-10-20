@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class dataBase {
+public class DataBase {
     static Connection conn;
     static PreparedStatement pstmt;
     static Statement stmt;
@@ -30,8 +30,15 @@ public class dataBase {
         }
     }
 
+    public static void close() {
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void insertToDatabase(String englishWords, String meaning) {
-        //TODO: thông báo trùng lặp
         try {
             //xóa dấu cách để tránh lỗi sau này
             englishWords = englishWords.replace(" ", "");
@@ -54,11 +61,6 @@ public class dataBase {
     public static String readFromDatabase() {
         StringBuilder result = new StringBuilder();
         try {
-            if (checkEmptyDatabase()) {
-                System.out.println("Dictionary is empty! Please add more words!");
-                return "";
-            }
-
             //read
             ResultSet rs = stmt.executeQuery(READ);
             while (rs.next()) {
@@ -73,11 +75,6 @@ public class dataBase {
 
     public static void readFromDatabase(List<String> wordArray) {
         try {
-            if (checkEmptyDatabase()) {
-                System.out.println("Dictionary is empty! Please add more words!");
-                return;
-            }
-
             //read
             ResultSet rs = stmt.executeQuery(READ);
             while (rs.next()) {
@@ -129,19 +126,6 @@ public class dataBase {
         return result.toString();
     }
 
-    public static void lookup(List<String> wordArray, String target) {
-        try {
-            pstmt = conn.prepareStatement(LOOKUP);
-            pstmt.setString(1, target);
-            ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                wordArray.add(rs.getString("english_word"));
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-
     public static String lookupSingleWord(String target) {
         try {
             pstmt = conn.prepareStatement(LOOKUP1);
@@ -173,7 +157,5 @@ public class dataBase {
 
     public static void main(String[] args) {
         connect();
-        updateDatabase("hi", "hi", "chào");
-        System.out.println(lookupSingleWord("hi"));
     }
 }
