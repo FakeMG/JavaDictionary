@@ -1,51 +1,56 @@
 .txt {
     -fx-font-family: "Quicksand";
     -fx-font-size: 12;
-    -fx-border-color: #257bb9;
-    -fx-border-width: 0.5;
-    -fx-border-radius: 1;
-    -fx-border: gone;
-    -fx-background-color: transparent;
-
+    -fx-border-radius: 5;
+    -fx-border: null;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.2), 0.5, 0.0, 0, 1);
 }
-.btn {
-    /*-fx-border-color: #eff4ff;*/
-    /*-fx-background-color: #2b5797;*/
-    /*-fx-text-fill: #eff4ff;*/
 
-    -fx-text-fill: white;
-    -fx-font-family: "Arial Narrow";
+.root {
+    -fx-background-color: #eeefee;
+}
+
+.button {
+    -fx-text-fill: #757575;
+    -fx-font-family: "System";
     -fx-font-weight: bold;
-    -fx-border-color:null;
-    -fx-background-color:#1F8FE8;
+    -fx-background-color: white;
     -fx-background-radius: 5;
     -fx-border-radius: 5;
-
-    /*-fx-text-fill: white;*/
-    /*-fx-font-family: "Arial Narrow";*/
-    /*-fx-font-weight: bold;*/
-    /*-fx-background-color: linear-gradient(#61a2b1, #2A5058);*/
-    /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
-
-
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.2), 0.5, 0.0, 0, 1);
 }
-.btn:hover{
+
+.button:hover {
     -fx-background-color: null;
-    -fx-text-fill:#1F8FE8;
-    -fx-font-weight:bold;
-    /*-fx-background-radius: 10%;*/
-    -fx-border-color: #1F8FE8;
-    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-effect: null;
+}
 
-    /*-fx-background-color: linear-gradient(#2A5058, #61a2b1);*/
+.vocabButton:hover {
+    -fx-border-color: #1e90ff;
+    -fx-text-fill: #1e90ff;
+}
 
+.transButton:hover {
+    -fx-border-color: #ff7b1f;
+    -fx-text-fill: #ff7b1f;
+}
 
+.exitButton:hover {
+    -fx-border-color: #ff3737;
+    -fx-text-fill: #ff3737;
+}
+
+.addEditDelButton:hover {
+    -fx-border-color: white;
+    -fx-text-fill: white;
 }
 
 .tv {
 }
 
 .txt_translate_title {
-    -fx-border-color: #257bb9;
-    -fx-border-radius: 8;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
 }

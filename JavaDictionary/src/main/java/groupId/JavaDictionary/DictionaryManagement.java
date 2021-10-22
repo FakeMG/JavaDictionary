@@ -50,13 +50,12 @@ public class DictionaryManagement {
 
     public void insertFromFile() {
         try {
-            String url = "D:\\Projects\\JavaDictionary\\JavaDictionary\\src\\dictionaries.txt";
+            String url = "src/main/resources/dictionaries.txt";
             fileInputStream = new FileInputStream(url);
             bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
             StringBuilder currentWord = new StringBuilder();
             String target = "";
             String explain = "";
-            Word word = new Word();
             int data = bufferedReader.read();
             char c;
 
@@ -83,6 +82,37 @@ public class DictionaryManagement {
                 }
                 data = bufferedReader.read();
             }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FILE NOT FOUND!", ex);
+        } catch (IOException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FAILED TO READ FILE!", ex);
+        } finally {
+            try {
+                bufferedReader.close();
+                fileInputStream.close();
+            } catch (NullPointerException | IOException ex) {
+                Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
+    public void insertFromFile2() {
+        try {
+            String url = "src/main/resources/data.txt";
+            fileInputStream = new FileInputStream(url);
+            bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+            String target = bufferedReader.readLine();
+            String explain = bufferedReader.readLine();
+
+            while (target != null && explain != null) {
+                if (!DataBase.checkRepeatedWord(target)) {
+                    DataBase.insertToDatabase(target, explain); //nếu từ chưa tồn tại thì insert vào database
+                }
+                target = bufferedReader.readLine();
+                explain = bufferedReader.readLine();
+            }
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FILE NOT FOUND!", ex);
         } catch (IOException ex) {
@@ -148,7 +178,7 @@ public class DictionaryManagement {
 
     public void dictionaryExportToFile() {
         try {
-            String url = "D:\\Projects\\JavaDictionary\\JavaDictionary\\src\\output.txt";
+            String url = "src/main/resources/output.txt";
             fileOutputStream = new FileOutputStream(url);
             bufferedWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
 
@@ -182,6 +212,12 @@ public class DictionaryManagement {
 
     public static void main(String[] args) {
         DictionaryManagement manager = new DictionaryManagement();
-        DictionaryCommandLine.showAllWords();
+        manager.insertFromFile2();
+//        manager.insertFromCommandline();
+//        manager.deleteWord();
+//        manager.updateWord();
+//        manager.dictionaryLookup();
+//        manager.dictionaryExportToFile();
+//        DictionaryCommandLine.showAllWords();
     }
 }

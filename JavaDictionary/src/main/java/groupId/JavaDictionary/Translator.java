@@ -11,7 +11,6 @@ public final class Translator {
 
     public static void main(String[] args) throws IOException {
         String text = "xin chào";
-        //Translated text: Hallo Welt!
         System.out.println("Translated text: " + translate("vi", "en", text));
     }
 
@@ -21,6 +20,7 @@ public final class Translator {
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
                 "&source=" + langFrom;
+
         URL url = new URL(urlStr);
         StringBuilder response = new StringBuilder();
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -31,6 +31,7 @@ public final class Translator {
             response.append(inputLine);
         }
         in.close();
+
         return response.toString();
     }
 }

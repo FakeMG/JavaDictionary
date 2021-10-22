@@ -16,13 +16,13 @@
                   <Image url="@../../images/logo2.png" />
                </image>
             </ImageView>
-            <Button mnemonicParsing="false" onAction="#vocabScene" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Vocabulary" />
-            <Button mnemonicParsing="false" onAction="#translateScene" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Translation">
+            <Button mnemonicParsing="false" onAction="#vocabScene" prefHeight="30.0" prefWidth="200.0" styleClass="vocabButton" text="Vocabulary" />
+            <Button mnemonicParsing="false" onAction="#translateScene" prefHeight="30.0" prefWidth="200.0" styleClass="transButton" text="Translation">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="200.0" styleClass="btn" text="Exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="200.0" styleClass="exitButton" text="Exit">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>

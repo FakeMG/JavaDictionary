@@ -1,5 +1,0 @@
-hello	-	xin chào
-name	-	tên
-hell	-	địa ngục
-hi	-	chào
-heaven	-	thiên đường

@@ -37,9 +37,9 @@ public class VocabularyController implements Initializable {
     @FXML
     public ImageView speakerImg;
     @FXML
-    public TextArea engWord;
+    public TextField engWord;
     @FXML
-    public TextArea vietWord;
+    public TextField vietWord;
     @FXML
     public TextField searchBar;
     @FXML
@@ -166,7 +166,7 @@ public class VocabularyController implements Initializable {
             Word targetWord = editingDialog(selectedWord);
             if (targetWord != null) {
                 //check repeated
-                if (DataBase.checkRepeatedWord(targetWord.getWordTarget())) {
+                if (DataBase.lookupSingleWord(selectedWord).equals(targetWord.getWordExplain()) && selectedWord.equals(targetWord.getWordTarget())) {
                     showAlert("This word has already existed!");
                     return;
                 }
@@ -181,7 +181,7 @@ public class VocabularyController implements Initializable {
                 DataBase.updateDatabase(targetWord.getWordTarget(), targetWord.getWordExplain(), selectedWord);
                 int index = fullWordArray.indexOf(selectedWord);
                 fullWordArray.set(index, targetWord.getWordTarget());
-                showAlert("Word is edited!");
+                showAlert("Word is updated!");
             }
         }
     }
