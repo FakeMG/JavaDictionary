@@ -5,34 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bafcef56-d84d-49ae-8c59-82c3aaa036bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/DictionaryManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/Translator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/dictionaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dictionaries.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/groupId/JavaDictionary/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/groupId/JavaFX/VocabularyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/groupId/JavaFX/VocabularyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/translation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/translation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/vocabulary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/groupId/JavaFX/vocabulary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/exchange.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/exchange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/vocab_logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/vocab_logo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaDictionary/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaDictionary/DictionaryManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/VocabularyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/translation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/translation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/groupId/JavaFX/vocabulary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/groupId/JavaFX/vocabulary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/exchange.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/exchange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/vocab_logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/vocab_logo3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/words.db" beforeDir="false" afterPath="$PROJECT_DIR$/words.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IdeaProjects" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3954023" />
@@ -184,7 +160,13 @@
       <workItem from="1634830996691" duration="6717000" />
       <workItem from="1634839070970" duration="522000" />
       <workItem from="1634840061767" duration="19000" />
-      <workItem from="1634862826758" duration="2007000" />
+      <workItem from="1634862826758" duration="4421000" />
+      <workItem from="1634877519685" duration="22000" />
+      <workItem from="1635439795525" duration="71000" />
+      <workItem from="1635674364138" duration="991000" />
+      <workItem from="1635675449226" duration="338000" />
+      <workItem from="1635762774362" duration="414000" />
+      <workItem from="1635763328444" duration="40000" />
     </task>
     <servers />
   </component>

@@ -128,6 +128,51 @@ public class DictionaryManagement {
 
     }
 
+    public void insertFromFile3() {
+        try {
+            String url = "src/main/resources/data2.txt";
+            fileInputStream = new FileInputStream(url);
+            bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+            StringBuilder currentWord = new StringBuilder();
+            int data = bufferedReader.read();
+            char c;
+            String target = bufferedReader.readLine();
+            String explain = bufferedReader.readLine();
+
+            while (data != -1) {
+                c = (char) data;
+
+                if (c == '@') {
+                    currentWord = new StringBuilder(); //reset StringBuilder
+
+                    if (!DataBase.checkRepeatedWord(target)) {
+                        DataBase.insertToDatabase(target, explain); //nếu từ chưa tồn tại thì insert vào database
+                    }
+
+                    target = bufferedReader.readLine();
+                }
+
+                if (c == '*' || c == '-' || c == '=') {
+                    currentWord.append(bufferedReader.readLine()).append("\n");
+                }
+                data = bufferedReader.read();
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FILE NOT FOUND!", ex);
+        } catch (IOException ex) {
+            Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, "FAILED TO READ FILE!", ex);
+        } finally {
+            try {
+                bufferedReader.close();
+                fileInputStream.close();
+            } catch (NullPointerException | IOException ex) {
+                Logger.getLogger(DictionaryManagement.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+
     public void deleteWord() {
         String target;
         System.out.print("Enter a word: ");
